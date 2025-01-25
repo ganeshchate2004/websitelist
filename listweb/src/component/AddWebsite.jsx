@@ -16,7 +16,7 @@ const AddWebsite = () => {
       const fetchWebsites = async () => {
         try {
           const token = localStorage.getItem("token");
-          const response = await fetch("http://localhost:5000/user-websites", {
+          const response = await fetch("https://websitelist.onrender.com/user-websites", {
             headers: {
               Authorization: token,
             },
@@ -34,7 +34,7 @@ const AddWebsite = () => {
   // Handle signup
   const handleSignup = async (name, email, password) => {
     try {
-      const response = await fetch("http://localhost:5000/signup", {
+      const response = await fetch("https://websitelist.onrender.com/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const AddWebsite = () => {
   // Handle login
   const handleLogin = async (email, password) => {
     try {
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch("https://websitelist.onrender.com/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const AddWebsite = () => {
   const addWebsite = async (newWebsite) => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/add-website", {
+      const response = await fetch("https://websitelist.onrender.com/add-website", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -110,7 +110,7 @@ const AddWebsite = () => {
   const deleteWebsite = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:5000/delete-website/${id}`, {
+      const response = await fetch(`https://websitelist.onrender.com/delete-website/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: token,
