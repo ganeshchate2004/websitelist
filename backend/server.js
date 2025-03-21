@@ -27,13 +27,13 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 // Website Schema and Model
+
 const websiteSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   name: { type: String, required: true },
   link: { type: String, required: true },
-  image: { type: String, required: true },
+  image: { type: String, required: true, default: "https://www.apple.com/newsroom/images/product/apps/standard/Apple-App-Store-Awards-2022-Trophy_inline.jpg.slideshow-large_2x.jpg" },
 });
-
 const Website = mongoose.model("Website", websiteSchema);
 
 // Middleware to authenticate token
